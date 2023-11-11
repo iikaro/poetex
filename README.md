@@ -1,2 +1,2 @@
 # poetex
-Convert text files into tex files
+Convert text files into tex files.
