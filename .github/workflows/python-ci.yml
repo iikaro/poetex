@@ -32,7 +32,7 @@ jobs:
         uses: psf/black@stable
         with:
           options: "--check --verbose"
-          src: "./src"
+          src: "./poetex"
           version: "~= 22.0"
       - name: Test with unittest
         run: |
