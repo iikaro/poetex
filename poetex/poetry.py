@@ -1,7 +1,5 @@
+from poetex.constants import DOUBLE_LINE_SPACING, SINGLE_LINE_SPACING
 from poetex.poem import TitleType, Verse, Stanza, Poem, Untitled, Title
-
-DOUBLE_LINE_SPACING = "\n\n"
-SINGLE_LINE_SPACING = "\n"
 
 
 def load_file_contents(file_path: str) -> str:

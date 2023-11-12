@@ -2,6 +2,7 @@ import unittest
 
 from local_env import SOURCE
 from poetex.file_manager.manager import get_list_of_files
+from poetex.latex.builder import populate_template, build
 from poetex.poetry import load_poem
 
 
@@ -11,6 +12,17 @@ class TestLoadPoem(unittest.TestCase):
         poem = load_poem(poems[0])
 
         self.assertEqual(len(poem.stanzas), 6)
+
+    def test_T02_load_multiple_poems(self):
+        paths = get_list_of_files(SOURCE)
+        poems = [load_poem(path) for path in paths]
+        self.assertEqual(len(poems), 2)
+
+    def test_T03_test_poem_builder(self):
+        paths = get_list_of_files(SOURCE)
+        poems = [load_poem(path) for path in paths]
+        populate_template(poems)
+        build()
 
 
 if __name__ == "__main__":
