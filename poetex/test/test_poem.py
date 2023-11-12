@@ -9,8 +9,9 @@ class TestLoadPoem(unittest.TestCase):
     def test_T01_load_poem(self):
         poems = get_list_of_files(SOURCE)
         poem = load_poem(poems[0])
+
         self.assertEqual(len(poem.stanzas), 6)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
