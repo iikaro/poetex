@@ -34,8 +34,6 @@ jobs:
           options: "--check --verbose"
           src: "./src"
           version: "~= 22.0"
-        run: |
-          black poetex --check
       - name: Test with unittest
         run: |
           python -m unittest discover
