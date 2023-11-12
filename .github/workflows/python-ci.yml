@@ -36,4 +36,4 @@ jobs:
           version: "~= 22.0"
       - name: Test with unittest
         run: |
-          python -m unittest discover
+          python -m poetry run unittest discover
