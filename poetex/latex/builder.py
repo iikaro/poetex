@@ -1,4 +1,3 @@
-# fonts: libertine, paladino, stinx, fouriernc
 import os
 import os.path
 import shutil
@@ -27,12 +26,11 @@ def compile_latex(source: str = SOURCE) -> None:
     Make poetry LaTeX book from individual plain text files within source.
     :param source: Absolute path to where the individual poems are located.
     """
-    paths = get_list_of_files(source)
-
-    poems = [load_poem(path) for path in paths]
-
     create_output_directories()
     copy_latex_templates_to_build_folder()
+
+    poem_paths = get_list_of_files(source)
+    poems = [load_poem(path) for path in poem_paths]
     poems_relative_path = populate_template(poems)
 
     add_poems_to_main_file(poems_relative_path)
@@ -91,7 +89,7 @@ def populate_template(poems: list[Poem]) -> list[str]:
 
 
 def build():
-    """Call LaTeX command to build PDF, twice to generate table of contents."""
+    """Call LaTeX command to build PDF twice to generate table of contents."""
     main_tex_file_path = os.path.join(OUTPUT_PATH, MAIN)
     command = ["pdflatex", "-output-directory=" + OUTPUT_PATH, main_tex_file_path]
     try:
