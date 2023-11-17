@@ -83,8 +83,7 @@ class Poem(PoetexBaseModel):
         begin = "\\begin{verse}" + SINGLE_LINE_SPACING
         end = "\\end{verse}"
 
-        poem_latex = []
-        poem_latex.append(begin)
+        poem_latex = [begin]
         for stanza in self.stanzas:
             for verse in stanza.verses:
                 poem_latex.append(verse.text + END_OF_VERSE + SINGLE_LINE_SPACING)
