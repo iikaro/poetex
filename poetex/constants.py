@@ -1,3 +1,5 @@
 DOUBLE_LINE_SPACING = "\n\n"
 SINGLE_LINE_SPACING = "\n"
 TEX_EXTENSION = ".tex"
+END_OF_VERSE = "\\\\"
+END_OF_STANZA = "!"
