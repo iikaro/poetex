@@ -3,10 +3,12 @@ from typing import Optional
 
 from pydantic import BaseModel
 
-from poetex.constants import DOUBLE_LINE_SPACING, SINGLE_LINE_SPACING
-
-END_OF_VERSE = "\\\\"
-END_OF_STANZA = "!"
+from poetex.constants import (
+    DOUBLE_LINE_SPACING,
+    SINGLE_LINE_SPACING,
+    END_OF_VERSE,
+    END_OF_STANZA,
+)
 
 
 class TitleType(str, Enum):
