@@ -11,6 +11,7 @@ Welcome to poetex's documentation!
    :caption: Contents:
 
    source/modules
+   categorisation/categorisation
 
 
 Indices and tables
