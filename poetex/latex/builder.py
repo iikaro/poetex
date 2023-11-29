@@ -21,9 +21,10 @@ TITLE_PAGE_FILE_PATH = os.path.join(PATH, TEMPLATES_DIR, TITLE_PAGE)
 POEMS_KEY = "%#POEMS#"
 
 
-def compile_latex(source: str = SOURCE) -> None:
+def compile_latex(source: str) -> None:
     """
     Make poetry LaTeX book from individual plain text files within source.
+
     :param source: Absolute path to where the individual poems are located.
     """
     create_output_directories()
@@ -42,6 +43,7 @@ def add_poems_to_main_file(poems_relative_path: list[str]) -> None:
     """
     Include tex poems to the main tex file. The poems will be inserted where the key %#POEMS# is located by means of the
     \include{path} command.
+
     :param poems_relative_path: List with relative path of all tex poems.
     """
     # Read contents of main.tex
@@ -65,6 +67,7 @@ def add_poems_to_main_file(poems_relative_path: list[str]) -> None:
 def populate_template(poems: list[Poem]) -> list[str]:
     """
     Convert plain text poem files (txt) into tex files and place them in the folder where PDF will be compiled.
+
     :param poems: List of poem objects.
     :return: List of relative path where to find the poems in tex format.
     """
