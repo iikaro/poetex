@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from poetex.constants import (
     DOUBLE_LINE_SPACING,
@@ -67,7 +67,7 @@ class Untitled(Title):
 
 class Poem(PoetexBaseModel):
     stanzas: list[Stanza]
-    title: Title = Untitled
+    title: Title = Field(default_factory=Untitled)
     language: Language = Language.ENGLISH
 
     def __str__(self) -> str:
