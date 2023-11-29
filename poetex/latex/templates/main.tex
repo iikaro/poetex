@@ -5,6 +5,10 @@
 \usepackage{verse} % Package for poem support
 \usepackage{pdfcolparallel} % For bilingual editions
 \usepackage{libertine} % You may change the font
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+\DeclareBibliographyAlias{poem}{inbook} % Define @poem entry type
+\addbibresource{references.bib}
+
 \begin{document}
 
 % Title page
@@ -18,4 +22,9 @@
 % Poems
 %#POEMS#
 \newpage
+
+% Include the bibliography
+\nocite{*}
+\printbibliography
+
 \end{document}
