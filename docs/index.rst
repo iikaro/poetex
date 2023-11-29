@@ -12,6 +12,7 @@ Welcome to poetex's documentation!
 
    source/modules
    categorisation/categorisation
+   categorisation/bibtex
 
 
 Indices and tables
