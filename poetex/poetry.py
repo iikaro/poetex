@@ -5,6 +5,7 @@ from poetex.poem import TitleType, Verse, Stanza, Poem, Untitled, Title
 def load_file_contents(file_path: str) -> str:
     """
     Load contents of text file into plain string.
+
     :param file_path: Path to file.
     :return: String with file contents.
     """
@@ -16,9 +17,9 @@ def load_file_contents(file_path: str) -> str:
 def load_poem(file_path: str, title_type: TitleType = TitleType.FIRST_LINE) -> Poem:
     """
     Load poem from text file (.txt) and store it in a Poem object.
+
     :param file_path: Path to text file.
-    :param title_type: Enum stating how the title of the poem will be extracted from the text file. Default is
-    'first_line', i.e., first line of the text file will be used as title and removed from the final Poem object.
+    :param title_type: Enum stating how the title of the poem will be extracted from the text file. Default is 'first_line', i.e., first line of the text file will be used as title and removed from the final Poem object.
     :return: Poem object.
     """
     contents = load_file_contents(file_path)
