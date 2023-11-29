@@ -6,9 +6,7 @@ The ``@poem`` BibTeX entry would be simply a derivation of the ``@inbook`` forma
 
 .. code-block::
 
-   @string{poem = {Poem}}
-
-   @poem{AuthorYear,
+   @poem{PoemAuthorYear,
 	  author    = {Author, A.},
 	  title     = {Title of the Poem},
 	  booktitle = {Title of the Collection},
@@ -25,5 +23,5 @@ The ``@poem`` BibTeX entry would be simply a derivation of the ``@inbook`` forma
 	  note      = {Additional notes},
 	  key       = {Key},
      source    = {Medium if not a book},
-     url       = {Where to find it online, if not a book}
+     url       = {https://www.bibtex.org/}
 	}

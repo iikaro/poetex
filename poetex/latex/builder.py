@@ -12,12 +12,15 @@ from poetex.poetry import load_poem
 OUTPUT_DIR = "build"
 OUTPUT_PATH = os.path.join(ROOT, OUTPUT_DIR)
 MAIN = "main.tex"
+MAIN_AUX = "main.aux"
 TITLE_PAGE = "title_page.tex"
+REFERENCES = "references.bib"
 TEMPLATES_DIR = "templates"
 PATH = os.path.dirname(__file__)
 POEMS_DIR = "poems"
 MAIN_FILE_PATH = os.path.join(PATH, TEMPLATES_DIR, MAIN)
 TITLE_PAGE_FILE_PATH = os.path.join(PATH, TEMPLATES_DIR, TITLE_PAGE)
+REFERENCES_FILE_PATH = os.path.join(PATH, TEMPLATES_DIR, REFERENCES)
 POEMS_KEY = "%#POEMS#"
 
 
@@ -94,8 +97,16 @@ def populate_template(poems: list[Poem]) -> list[str]:
 def build():
     """Call LaTeX command to build PDF twice to generate table of contents."""
     main_tex_file_path = os.path.join(OUTPUT_PATH, MAIN)
+    main_aux_file_path = os.path.join(OUTPUT_PATH, MAIN_AUX)
     command = ["pdflatex", "-output-directory=" + OUTPUT_PATH, main_tex_file_path]
+    bibtex_command = [
+        "bibtex",
+        "--include-directory=" + OUTPUT_PATH,
+        main_aux_file_path,
+    ]
     try:
+        subprocess.run(command, check=True)
+        subprocess.run(bibtex_command, check=True)
         subprocess.run(command, check=True)
         subprocess.run(command, check=True)
     except subprocess.CalledProcessError as e:
@@ -113,6 +124,7 @@ def copy_latex_templates_to_build_folder() -> None:
     """Copy template files (main.tex and title_path.tex) to the folder where the PDF will be compiled."""
     shutil.copy(MAIN_FILE_PATH, OUTPUT_PATH)
     shutil.copy(TITLE_PAGE_FILE_PATH, OUTPUT_PATH)
+    shutil.copy(REFERENCES_FILE_PATH, OUTPUT_PATH)
 
 
 def create_output_directories() -> None:
