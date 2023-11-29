@@ -1,23 +1,24 @@
-.. poetex documentation master file, created by
-   sphinx-quickstart on Sat Nov 11 09:32:49 2023.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to poetex's documentation!
+Poetex's documentation!
 ==================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 3
+   :caption: User Guide
 
-   source/modules
    categorisation/categorisation
    categorisation/bibtex
 
+.. toctree::
+   :maxdepth: 2
+   :caption: API Reference
 
-Indices and tables
-==================
+   api/api
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Code Reference
+
+   source/modules
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`
