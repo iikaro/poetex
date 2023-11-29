@@ -20,4 +20,10 @@ class TestLoadPoem(unittest.TestCase):
 
     @unittest.skip("Skip until Github Actions is configured to run LaTeX commands")
     def test_T03_compile_latex(self):
-        compile_latex()
+        compile_latex(SOURCE)
+
+    def test_T04_verify_poem_object_is_json_serializable(self):
+        paths = get_list_of_files(SOURCE)
+        poems = [load_poem(path) for path in paths]
+        schema = poems[0].model_json_schema()
+        self.assertIsNotNone(schema)
