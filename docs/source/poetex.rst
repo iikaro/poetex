@@ -12,6 +12,7 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
+   poetex.database
    poetex.file_manager
    poetex.latex
 
