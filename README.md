@@ -1,4 +1,5 @@
 # poetex
+
 Convert text files into tex files.
 
 # Regenerate documentation
