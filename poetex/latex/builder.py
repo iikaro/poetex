@@ -3,7 +3,7 @@ import os.path
 import shutil
 import subprocess
 
-from local_env import ROOT, SOURCE
+from local_env import ROOT
 from poetex.constants import TEX_EXTENSION
 from poetex.file_manager.manager import get_list_of_files
 from poetex.poem import Poem
@@ -62,6 +62,7 @@ def add_poems_to_main_file(poems_relative_path: list[str]) -> None:
     main_file_contents = main_file_contents.replace(
         POEMS_KEY, "".join(poems_list_latex)
     )
+
     # Write back to main.tex file.
     with open(os.path.join(OUTPUT_PATH, MAIN), "w", encoding="utf-8") as file:
         file.write(main_file_contents)
