@@ -1,7 +1,8 @@
 import os
+from typing import List
 
 
-def get_list_of_files(source: str) -> list[str]:
+def get_list_of_files(source: str) -> List[str]:
     """
     Return list of absolute file paths to files within source.
 
