@@ -1,5 +1,5 @@
 from poetex.constants import DOUBLE_LINE_SPACING, SINGLE_LINE_SPACING
-from poetex.poem import TitleType, Verse, Stanza, Poem, Untitled, Title
+from poetex.poetry.poem import TitleType, Verse, Stanza, Poem, Untitled, Title
 from poetex.utils import load_file_contents
 
 
