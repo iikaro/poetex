@@ -5,7 +5,7 @@ import subprocess
 
 from local_env import ROOT
 from poetex.constants import TEX_EXTENSION
-from poetex.poem import Poem
+from poetex.poetry.poem import Poem
 from poetex.poetry import load_poem
 from poetex.utils import to_snake_case, get_list_of_files
 

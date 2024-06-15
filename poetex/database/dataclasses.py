@@ -1,4 +1,4 @@
-from poetex.poem import PoetexBaseModel, Language
+from poetex.poetry.poem import PoetexBaseModel, Language
 
 
 class PoemBibTexData(PoetexBaseModel):
