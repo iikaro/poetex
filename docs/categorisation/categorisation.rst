@@ -49,5 +49,3 @@ All that being said, I believe there should be an entry type that aims at highli
 .. [#sappho] https://en.wikipedia.org/wiki/Sappho
 .. [#sapphobook] Lardinois, André. Sappho: A New Translation of the Complete Works. Edited by Diane J. Rayor. 2nd ed. Cambridge: Cambridge University Press, 2023.
 .. [#bibtexdocs] https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf
-.. [#contos] https://www.editora34.com.br/detalhe.asp?id=940
-.. [#narrativas] https://www.editora34.com.br/detalhe.asp?id=250
