@@ -10,7 +10,9 @@ class TestLoadPoem(unittest.TestCase):
     def test_T01_load_poem(self):
         poems = get_list_of_files(SOURCE)
         poem = load_poem(poems[0])
-
+        print(f"First Verse\n{poem.stanzas[0].verses[0]}\n")
+        print(f"First Stanza\n{poem.stanzas[0]}\n")
+        print(f"First Poem\n{poem}")
         self.assertEqual(len(poem.stanzas), 5)
 
     def test_T02_load_multiple_poems(self):
@@ -18,7 +20,7 @@ class TestLoadPoem(unittest.TestCase):
         poems = [load_poem(path) for path in paths]
         self.assertEqual(len(poems), 1)
 
-    # @unittest.skip("Skip until Github Actions is configured to run LaTeX commands")
+    @unittest.skip("Skip until Github Actions is configured to run LaTeX commands")
     def test_T03_compile_latex(self):
         compile_latex(SOURCE)
 
