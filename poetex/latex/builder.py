@@ -4,10 +4,10 @@ import shutil
 import subprocess
 
 from local_env import ROOT
-from poetex.constants import TEX_EXTENSION
+from poetex.poetry.poetry import load_poem
+from poetex.utils.constants import TEX_EXTENSION
 from poetex.poetry.poem import Poem
-from poetex.poetry import load_poem
-from poetex.utils import to_snake_case, get_list_of_files
+from poetex.utils.utils import get_list_of_files, to_snake_case
 
 OUTPUT_DIR = "build"
 OUTPUT_PATH = os.path.join(ROOT, OUTPUT_DIR)

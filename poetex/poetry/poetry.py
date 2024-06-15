@@ -1,6 +1,6 @@
-from poetex.constants import DOUBLE_LINE_SPACING, SINGLE_LINE_SPACING
 from poetex.poetry.poem import TitleType, Verse, Stanza, Poem, Untitled, Title
-from poetex.utils import load_file_contents
+from poetex.utils.constants import DOUBLE_LINE_SPACING, SINGLE_LINE_SPACING
+from poetex.utils.utils import load_file_contents
 
 
 def load_poem(file_path: str, title_type: TitleType = TitleType.FIRST_LINE) -> Poem:

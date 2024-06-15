@@ -3,7 +3,7 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from poetex.constants import (
+from poetex.utils.constants import (
     DOUBLE_LINE_SPACING,
     SINGLE_LINE_SPACING,
     END_OF_VERSE,
