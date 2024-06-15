@@ -1,39 +1,53 @@
-Categorisation
-==============
+On Poems Categorisation
+=======================
 
-There exists a discernible gap in the systematic categorisation and citation methodologies applicable to individual poems, as well as other self-contained literary works, such as chronicles and short stories.
-The prevailing standard for citation, namely BibTeX, lacks a dedicated entry for poems, even though one could argue the ``@inbook`` entry may fulfill the purpose.
+There exists a discernible gap in the systematic categorisation and citation methodologies applied to books in contrast to the ones applied to individual poems, as well as other self-contained literary works, such as chronicles and short stories.
+Such that the prevailing standard for citation, namely BibTeX, lacks a dedicated entry for those [*]_.
 
-According to BibTeX [#bibtex]_, ``@inbook`` is reserved for 'a section or chapter in a book'.
-Naturally, individual poems do not constitute a section or chapter in the conventional way, and it seems far-fetched to try to fit poems into this category.
+One could argue the ``@inbook`` entry may fulfill the purpose.
+However, according to BibTeX [#bibtex]_, ``@inbook`` is reserved for 'a section or chapter in a book'.
+Naturally, individual poems do not constitute a section or chapter in the conventional way, and it seems far-fetched to try to fit them into this category.
 
-Another argument would be to use the ``@misc`` entry, which is 'used if nothing else fits'.
+Another argument would be to use the ``@misc`` entry, which is 'used if nothing else fits' [#bibtex]_.
 It seems reasonable that websites, flyers, interviews, audio recordings, and such fit into the miscellaneous category.
 Those formats and technologies have appeared long after most of the canonical materials used as sources of information existed, which are the ones BibTeX supports (books, collection, thesis).
-Nonetheless, poems, being as old as the very concept of books, merit a distinct categorisation.
+Nonetheless, poems, being as old as the very concept of books, deserve a distinct categorisation.
 
-Furthermore, the fact many poems are not contained in either books or anthologies emphasizes the need for a 'poem' entry.
-In the proposed entry, the format of publication assumes the role of a distinct field, as opposed to the prevailing practice of citing a poem within an anthology or book as a mere page number.
+Furthermore, the fact that many poems are not contained in either books or anthologies emphasizes the need for a specific entry.
+Take Sappho's [#sappho]_ poetry, for example. Only isolated poems and fragments exist [#sapphobook]_.
+Though no anthology existed when Sappho was alive, each poem exists on its own and the format of publication must assume the role of a secondary field, as opposed to citing a poem within a book as a mere page number.
 
-Naturally, this argument extends to other standalone literary compositions, such as chronicles and short stories, each possessing an inherent independence that transcends their periodic inclusion in anthologies.
 In fact, the recurrent gathering, reorganization, and (re)publication of these works in diverse anthologies underscore their autonomy.
-With the exception of anthologies compiled and published by the original authors, sporadically published works are typically organized and reissued by publishers or copyright holders.
+With the exception of anthologies compiled and published by the original authors in life, sporadically published works are typically reorganized and reissued by publishers or copyright holders into different forms and books.
+(There are certainly numerous examples of this, and `here <#appendix-example-of-reissuing>`_ is one.)
 
-Notably, the structure of these editions may entail one work being encompassed within another.
-Take for example the books 'Contos Reunidos' [#contos]_, a collection of short stories by Dostoevsky and 'Duas narrativas fantásticas, A dócil e O sonho de um homem ridículo' [#narrativas]_, a book with two novellas from the same author, both published by the Brazilian publisher Editora 34.
-One will notice that the former edition contains the two novellas from the latter book.
-The novellas are standalone pieces of literary work.
-The books that contain them are, mostly certainly, not as important as the novellas.
-Except for critical editions, where prefaces, footnotes, essays, and other pre- and post-textual elements contain information that will affect the way the work is consumed by the reader, the editions play a smaller role than they are attributed.
-This is also true for many other works and authors worldwide.
+Solution
+--------
 
-In the context of citation, the anthology's relevance pales in comparison to the individual poem under consideration.
-In most of the times, it is the singular literary work that holds significance, not the manner in which it is nested within an anthology.
+When I first wrote this document, I was convinced that a new entry type, ``@poem`` should be implemented as a solution.
+However, upon further research, it seems that BibLaTeX solved this issue by simply expanding on the concept of the existing ``@inbook`` entry.
 
-Consequently, the proposed standard aims not to sever the poem from its inherent essence but rather to underscore its independent nature, advocating for a categorization that reflects this autonomy.
+According to BibLaTeX documentation, the ``@inbook`` is recommended for 'a self-contained part of a book with its own title **only**'. Emphasis is given on the word 'only' by me.
+The following lines of the documentation state that 'if you want to refer to a chapter or section of a book, simply use the book type and add a chapter and/or pages field'.
 
-A suggested BibTeX entry, @poem, is put forth, wherein the containing book assumes a subsidiary role as a mere field, not the opposite, thereby acknowledging the distinctive character of the poem.
+Conclusion
+----------
+
+Therefore, BibLaTeX solves the issue: to use ``@inbook``.
+
+It would be good, nonetheless, if there were an alias, e.g., ``@poem`` that could mimic the ``@inbook`` almost exactly, and maybe even add more fields to it, such as ``poemdate``, since many poets write down the dates their poems were written.
+All that being said, I believe there should be an entry type that aims at highlighting the independent nature of a poem; a categorization that reflects its autonomy.
+
+
+.. rubric:: Footnotes
+
+.. [*] From this point on, I will only refer to poems, specifically. However, as stated before, the same applies to short-stories, novellas, chronicles, and any other form of self-contained literary work.
+
+.. rubric:: References
 
 .. [#bibtex] https://www.bibtex.com/g/bibtex-format/
+.. [#sappho] https://en.wikipedia.org/wiki/Sappho
+.. [#sapphobook] Lardinois, André. Sappho: A New Translation of the Complete Works. Edited by Diane J. Rayor. 2nd ed. Cambridge: Cambridge University Press, 2023.
+.. [#bibtexdocs] https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf
 .. [#contos] https://www.editora34.com.br/detalhe.asp?id=940
 .. [#narrativas] https://www.editora34.com.br/detalhe.asp?id=250
