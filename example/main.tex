@@ -1,0 +1,31 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{verse} % Package for poem support
+\usepackage{pdfcolparallel} % For bilingual editions
+\usepackage{libertine} % You may change the font
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+\DeclareBibliographyAlias{poem}{inbook} % Define @poem entry type, it does not work properly though
+\addbibresource{references.bib}
+
+\begin{document}
+
+% Title page
+\include{title_page}
+\clearpage
+
+% Table of contents
+\tableofcontents
+\clearpage
+
+% Poems
+\include{poems/0_lorem_ipsum.tex}
+
+\newpage
+
+% Include the bibliography
+\nocite{*}
+\printbibliography
+
+\end{document}

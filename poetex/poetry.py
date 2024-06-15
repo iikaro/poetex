@@ -23,10 +23,7 @@ def load_poem(file_path: str, title_type: TitleType = TitleType.FIRST_LINE) -> P
     :return: Poem object.
     """
     contents = load_file_contents(file_path)
-    stanzas = [
-        Stanza(verses=[Verse(text=verse) for verse in _get_verses(stanza)])
-        for stanza in _get_stanzas(contents)
-    ]
+    stanzas = [Stanza(verses=[Verse(text=verse) for verse in _get_verses(stanza)]) for stanza in _get_stanzas(contents)]
     title = Untitled
     if title_type != TitleType.UNTITLED:
         title = Title(text=stanzas[0].verses[0].text, type=title_type)
