@@ -6,7 +6,6 @@ Poetex's documentation!
    :caption: User Guide
 
    categorisation/categorisation
-   categorisation/bibtex
 
 .. toctree::
    :maxdepth: 2
