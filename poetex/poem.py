@@ -71,11 +71,7 @@ class Poem(PoetexBaseModel):
     language: Language = Language.ENGLISH
 
     def __str__(self) -> str:
-        return (
-            str(self.title)
-            + "\n\n"
-            + "\n\n".join([str(stanza) for stanza in self.stanzas])
-        )
+        return str(self.title) + "\n\n" + "\n\n".join([str(stanza) for stanza in self.stanzas])
 
     @property
     def lines(self) -> int:
