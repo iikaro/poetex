@@ -19,7 +19,7 @@ def _get_stripped_file_contents(file_path: str) -> str:
     return commit_message.strip()
 
 
-def check_commit_message(file_path: str) -> None:
+def _check_commit_message(file_path: str) -> None:
     """
     Read current commit message and raise exception if it does not follow conventional commit format.
 
@@ -34,4 +34,4 @@ def check_commit_message(file_path: str) -> None:
 
 
 if __name__ == "__main__":
-    check_commit_message(sys.argv[1])
+    _check_commit_message(sys.argv[1])
