@@ -1,9 +1,9 @@
 import unittest
 
 from local_env import SOURCE
-from poetex.utils import get_list_of_files
 from poetex.latex.builder import compile_latex
-from poetex.poetry import load_poem
+from poetex.poetry.poetry import load_poem
+from poetex.utils.utils import get_list_of_files
 
 
 class TestLoadPoem(unittest.TestCase):
@@ -18,7 +18,7 @@ class TestLoadPoem(unittest.TestCase):
         poems = [load_poem(path) for path in paths]
         self.assertEqual(len(poems), 1)
 
-    @unittest.skip("Skip until Github Actions is configured to run LaTeX commands")
+    # @unittest.skip("Skip until Github Actions is configured to run LaTeX commands")
     def test_T03_compile_latex(self):
         compile_latex(SOURCE)
 
