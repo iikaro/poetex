@@ -1,7 +1,7 @@
 import unittest
 
 from local_env import SOURCE
-from poetex.file_manager.manager import get_list_of_files
+from poetex.utils import get_list_of_files
 from poetex.latex.builder import compile_latex
 from poetex.poetry import load_poem
 
