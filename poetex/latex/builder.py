@@ -24,7 +24,7 @@ REFERENCES_FILE_PATH = os.path.join(PATH, TEMPLATES_DIR, REFERENCES)
 POEMS_KEY = "%#POEMS#"
 
 
-def compile_latex(source: str, build: bool = False) -> None:
+def compile_latex(source: str, build: bool = True) -> None:
     """
     Make poetry LaTeX book from individual plain text files within source.
 
