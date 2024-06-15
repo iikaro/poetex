@@ -106,7 +106,7 @@ def _build():
         subprocess.run(bibtex_command, check=True)
         subprocess.run(command, check=True)
         subprocess.run(command, check=True)
-    except subprocess.CalledProcessError as e:
+    except subprocess.CalledProcessError as e:  # pragma: no cover
         print(f"Error compiling {main_tex_file_path}: {e}")
 
     print("LaTeX compilation complete.")
@@ -121,8 +121,8 @@ def _copy_latex_templates_to_build_folder() -> None:
 
 def _create_output_directories() -> None:
     """Create build directory, and inner folders, where the PDF will be compiled, if it does not exist, at the root."""
-    if not os.path.exists(OUTPUT_PATH):
+    if not os.path.exists(OUTPUT_PATH):  # pragma: no cover
         os.makedirs(OUTPUT_PATH)
 
-    if not os.path.exists(os.path.join(OUTPUT_PATH, POEMS_DIR)):
+    if not os.path.exists(os.path.join(OUTPUT_PATH, POEMS_DIR)):  # pragma: no cover
         os.makedirs(os.path.join(OUTPUT_PATH, POEMS_DIR))
