@@ -5,7 +5,7 @@ repos:
       - id: commit-msg
         name: Check for right commit message format
         language: system
-        entry: python tools/check_commit_message.py
+        entry: python hooks/check_commit_message.py
         stages: [ commit-msg ]
   - repo: https://github.com/psf/black
     rev: 23.7.0
