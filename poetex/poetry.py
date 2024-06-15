@@ -1,17 +1,6 @@
 from poetex.constants import DOUBLE_LINE_SPACING, SINGLE_LINE_SPACING
 from poetex.poem import TitleType, Verse, Stanza, Poem, Untitled, Title
-
-
-def load_file_contents(file_path: str) -> str:
-    """
-    Load contents of text file into plain string.
-
-    :param file_path: Path to file.
-    :return: String with file contents.
-    """
-    with open(file_path, "r", encoding="utf-8") as file:
-        contents = file.read()
-    return contents
+from poetex.utils import load_file_contents
 
 
 def load_poem(file_path: str, title_type: TitleType = TitleType.FIRST_LINE) -> Poem:

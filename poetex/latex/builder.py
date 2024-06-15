@@ -5,9 +5,9 @@ import subprocess
 
 from local_env import ROOT
 from poetex.constants import TEX_EXTENSION
-from poetex.file_manager.manager import get_list_of_files
 from poetex.poem import Poem
 from poetex.poetry import load_poem
+from poetex.utils import to_snake_case, get_list_of_files
 
 OUTPUT_DIR = "build"
 OUTPUT_PATH = os.path.join(ROOT, OUTPUT_DIR)
@@ -110,11 +110,6 @@ def _build():
         print(f"Error compiling {main_tex_file_path}: {e}")
 
     print("LaTeX compilation complete.")
-
-
-def to_snake_case(string: str) -> str:
-    """Convert string to snake case."""
-    return string.replace(" ", "_").lower()
 
 
 def _copy_latex_templates_to_build_folder() -> None:
