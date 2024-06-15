@@ -1,5 +1,4 @@
 import os
-from typing import List
 
 
 def to_snake_case(string: str) -> str:
@@ -7,7 +6,7 @@ def to_snake_case(string: str) -> str:
     return string.replace(" ", "_").lower()
 
 
-def get_list_of_files(source: str) -> List[str]:
+def get_list_of_files(source: str) -> list[str]:
     """
     Return list of absolute file paths to files within source.
 
