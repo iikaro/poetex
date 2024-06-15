@@ -13,26 +13,6 @@ Subpackages
    :maxdepth: 4
 
    poetex.database
-   poetex.file_manager
    poetex.latex
-
-Submodules
-----------
-
-
-.. automodule:: poetex.constants
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-.. automodule:: poetex.poem
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-.. automodule:: poetex.poetry
-   :members:
-   :undoc-members:
-   :show-inheritance:
+   poetex.poetry
+   poetex.utils
