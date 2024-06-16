@@ -1,3 +1,6 @@
+# Poetex artifacts
+test-report*.xml
+
 # JetBrains
 .idea
 
