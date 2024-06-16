@@ -10,6 +10,7 @@ permissions:
   contents: read
   actions: read
   checks: write
+  pull-requests: write
 
 jobs:
   test:
@@ -52,18 +53,24 @@ jobs:
           src: "./poetex"
           version: "~= 22.0"
 
-      - name: Test with unittest
+      - name: Run tests with coverage
         run: |
           source .venv/bin/activate
-          python -m pytest --junitxml=reports/jest-test-report.xml
+          python -m pytest -vvv --cov=poetex --cov-report=xml:coverage.xml --junitxml=test-report.xml --cov-report term | tee pytest-coverage.txt
 
-      - name: Test Report
+      - name: Test report
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
           name: test-results
-          path: reports/jest-*.xml
+          path: ./test-report*.xml
           reporter: java-junit
+
+      - name: Coverage report
+        uses: MishaKav/pytest-coverage-comment@main
+        with:
+          pytest-coverage-path: ./pytest-coverage.txt
+          pytest-xml-coverage-path: ./coverage.xml
 
   build-pdf:
     runs-on: ubuntu-latest
