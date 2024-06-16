@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: read
+  actions: read
+  checks: write
 
 jobs:
   test:
@@ -55,22 +57,30 @@ jobs:
           source .venv/bin/activate
           python -m unittest discover
 
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: JEST Tests
+          path: reports/jest-*.xml
+          reporter: jest-junit
+
   build_pdf:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Compile LaTeX example
-      uses: xu-cheng/latex-action@v3
-      with:
-        root_file: main.tex
-        working_directory: example
+      - name: Compile LaTeX example
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: example
 
-    - name: Upload PDF example
-      uses: actions/upload-artifact@v4
-      with:
-        name: PDF
-        path: example/main.pdf
+      - name: Upload PDF example
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: example/main.pdf
