@@ -47,7 +47,7 @@ def compile_latex(source: str, build: bool = True) -> None:
 def _add_poems_to_main_file(poems_relative_path: list[str]) -> None:
     """
     Include tex poems to the main tex file. The poems will be inserted where the key %#POEMS# is located by means of the
-    \include{path} command.
+    include{path} command.
 
     :param poems_relative_path: List with relative path of all tex poems.
     """
