@@ -96,14 +96,17 @@ class Poem(PoetexBaseModel):
 
         poem_latex = [begin]
         for stanza_index, stanza in enumerate(self.stanzas):
+            # Process stanza
             for verse_index, verse in enumerate(stanza.verses):
                 # Add verse
                 poem_latex.append(verse.text)
-                # Add double line spacing LaTeX command if the poem continues to the next stanza (\\)
+
                 if not self.is_last_verse(stanza_index, verse_index):
+                    # Add double line spacing LaTeX command if the poem continues to the next stanza (\\)
                     poem_latex.append(END_OF_VERSE)
-                # Add single line spacing to string (\n)
-                poem_latex.append(SINGLE_LINE_SPACING)
+
+                    # Add single line spacing to string (\n)
+                    poem_latex.append(SINGLE_LINE_SPACING)
 
             # Add LaTeX command to finish stanza (!)
             if not self.is_last_stanza(stanza_index):
