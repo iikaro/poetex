@@ -66,11 +66,11 @@ jobs:
           path: ./test-report*.xml
           reporter: java-junit
 
-      - name: Coverage report
-        uses: MishaKav/pytest-coverage-comment@main
-        with:
-          pytest-coverage-path: ./pytest-coverage.txt
-          pytest-xml-coverage-path: ./coverage.xml
+#      - name: Coverage report
+#        uses: MishaKav/pytest-coverage-comment@main
+#        with:
+#          pytest-coverage-path: ./pytest-coverage.txt
+#          pytest-xml-coverage-path: ./coverage.xml
 
   build-pdf:
     runs-on: ubuntu-latest
